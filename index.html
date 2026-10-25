@@ -245,8 +245,8 @@
         <!-- HEADER -->
         <div class="sheet-header">
             <div>
-                <div class="sheet-title">VOLUME FLIP 5 PATTERN &mdash; SCANNER &amp; BACKTEST LEDGER</div>
-                <div class="sheet-subtitle">Strict mathematical port of Image 1, 2, &amp; 3 &bull; 214 NIFTY F&amp;O Equities &bull; 5-Minute Timeframe &bull; Real Exchange Data</div>
+                <div class="sheet-title">VOLUME FLIP 5 &mdash; SIMPLE SCANNER (5-MIN TF)</div>
+                <div class="sheet-subtitle">Runs After 5 Candles Formation &bull; Pure C3 High/Low Breakout &bull; No Other Confirmations &bull; 214 NIFTY F&amp;O Equities</div>
             </div>
             <div class="meta-tags">
                 <span class="tag">Universe: 214 Stocks</span>
@@ -282,13 +282,13 @@
 
         <!-- WHAT SIR TOLD: IMPLEMENTATION SPECIFICATION -->
         <div class="rules-card">
-            <h4>📋 Pattern Architecture Implemented (Strictly matching reference images):</h4>
+            <h4>📋 Simple Scanner Architecture (Strictly matching mentor instructions):</h4>
             <ul>
-                <li><b>5-Bar Sequence (Image 2):</b> Bullish Base = <code style="color: #dc2626;">RED</code>, <code style="color: #dc2626;">RED</code>, <code style="color: #16a34a; font-weight: 700;">GREEN (C3 FLIP)</code>, <code style="color: #dc2626;">RED</code>, <code style="color: #dc2626;">RED</code>. Bearish Base = <code style="color: #16a34a;">GREEN</code>, <code style="color: #16a34a;">GREEN</code>, <code style="color: #dc2626; font-weight: 700;">RED (C3 FLIP)</code>, <code style="color: #16a34a;">GREEN</code>, <code style="color: #16a34a;">GREEN</code>.</li>
-                <li><b>Reference Levels (Image 3):</b> Upper Level = <b>Candle 3 High</b>, Lower Level = <b>Candle 3 Low</b>.</li>
-                <li><b>Breakout Candle (Image 3):</b> Subsequent candle crosses C3 level with <b>Volume &ge; Candle 3 Volume</b>.</li>
-                <li><b>Retest &amp; Bounce (Image 3):</b> Subsequent candle pulls back to touch the level within &plusmn;0.2% and rejects/bounces. Entry taken on retest close.</li>
-                <li><b>Risk Management:</b> Target = 2.0R / 1.5R. Stop Loss = C3 opposite boundary / swing. Trailing to Breakeven at 1.0R. 15:15 EOD square-off.</li>
+                <li><b>Runs After 5 Candles Formation (5-Min TF):</b> Scans as soon as the 5-candle base completes.</li>
+                <li><b>5-Bar Sequence:</b> Bullish Base = <code style="color: #dc2626;">RED</code>, <code style="color: #dc2626;">RED</code>, <code style="color: #16a34a; font-weight: 700;">GREEN (C3 FLIP)</code>, <code style="color: #dc2626;">RED</code>, <code style="color: #dc2626;">RED</code>. Bearish Base = <code style="color: #16a34a;">GREEN</code>, <code style="color: #16a34a;">GREEN</code>, <code style="color: #dc2626; font-weight: 700;">RED (C3 FLIP)</code>, <code style="color: #16a34a;">GREEN</code>, <code style="color: #16a34a;">GREEN</code>.</li>
+                <li><b>Reference Levels from Candle 3:</b> Upper Level = <b>Candle 3 High</b>, Lower Level = <b>Candle 3 Low</b>.</li>
+                <li><b>No Other Confirmations:</b> Immediate trigger when price crosses C3 level. No volume thresholds, no retest touch/bounce constraints.</li>
+                <li><b>Execution:</b> Buy Trigger = Price &gt; Candle 3 High. Sell Trigger = Price &lt; Candle 3 Low. Stop Loss = Opposite C3 boundary. Target = 2.0R.</li>
             </ul>
         </div>
 
